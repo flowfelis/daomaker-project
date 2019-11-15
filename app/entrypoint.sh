@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This script ensures that db has started before the application
+
 if [ "$DATABASE" = "postgres" ]
 then
     echo "Waiting for postgres..."

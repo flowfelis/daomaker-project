@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DaoMaker Project</title>
+
+  <link rel="stylesheet"
+        href="{% static 'daomaker/vendor/bootstrap/css/bootstrap.min.css' %}">
+  {% block extracss %}{% endblock %}
+</head>
+
+<body>
+
+{% block content %}{% endblock %}
+
+<script
+    src="{% static 'daomaker/vendor/jquery/jquery-3.4.1.min.js' %}"></script>
+<script
+    src="{% static 'daomaker/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'daomaker/js/script.js' %}"></script>
+{% block extrajs %}{% endblock %}
+</body>
+</html>

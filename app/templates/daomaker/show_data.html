@@ -1,0 +1,47 @@
+{% extends 'daomaker/base.html' %}
+
+{% block extracss %}
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+{% endblock %}
+
+{% block content %}
+
+  <h1>Tasks</h1>
+  <a class="btn btn-primary mb-5" href="{% url 'parse_url_ajax' %}">Go Back</a>
+  <table id="myTable" class="display">
+    <thead>
+    <tr>
+      <th>Parsed URL</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Site Name</th>
+      <th>Image URL</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    </tr>
+    </thead>
+    <tbody>
+    {% for task in tasks %}
+      <tr>
+        <td>{{ task.parsed_url }}</td>
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.site_name }}</td>
+        <td>{{ task.image_url }}</td>
+        <td>{{ task.date }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% block extrajs %}
+    <script
+        src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $('#myTable').DataTable();
+      });
+    </script>
+  {% endblock %}
+{% endblock %}
